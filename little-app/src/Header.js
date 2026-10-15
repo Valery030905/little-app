@@ -1,5 +1,5 @@
 import Nav from "./Nav";
-function Header() {
+function Header({ setPage }) {
     return (
         <header className="header">
             <div className="container header-content">
@@ -7,7 +7,7 @@ function Header() {
                 <img src="/images/logo.png" alt="Little Lemon logo" className="logo"/>
             </a>
 
-            <Nav />
+            <Nav setPage={setPage} />
             </div>
         </header>
     );

@@ -1,7 +1,11 @@
 import {useState} from "react";
-function Nav() {
+function Nav({ setPage}) {
     const [menuOpen, setMenuOpen] = useState(false);
     const closeMenu = () => setMenuOpen(false);
+    const goToPage = (page) =>{
+        setPage(page);
+        closeMenu();
+    }
 
     return (
         <nav className="navigation" aria-label="Main navigation">
@@ -24,27 +28,75 @@ function Nav() {
                 className={`nav-menu ${menuOpen ? "open" : ""}`}
             >
                 <li>
-                    <a href="/" onClick={closeMenu}>Home</a>
+                    <a
+                        href="/"
+                        onClick={(event) => {
+                            event.preventDefault();
+                            goToPage("home");
+                        }}
+                    >
+                        Home
+                    </a>
                 </li>
 
                 <li>
-                    <a href="/about" onClick={closeMenu}>About</a>
+                    <a
+                        href="/about"
+                        onClick={(event) => {
+                            event.preventDefault();
+                            goToPage("about");
+                        }}
+                    >
+                        About
+                    </a>
                 </li>
 
                 <li>
-                    <a href="/menu" onClick={closeMenu}>Menu</a>
+                    <a
+                        href="/menu"
+                        onClick={(event) => {
+                            event.preventDefault();
+                            goToPage("menu");
+                        }}
+                    >
+                        Menu
+                    </a>
                 </li>
 
                 <li>
-                    <a href="/Reservation" onClick={closeMenu}>Reservations</a>
+                    <a
+                        href="/reservation"
+                        onClick={(event) => {
+                            event.preventDefault();
+                            goToPage("reservation");
+                        }}
+                    >
+                        Reservations
+                    </a>
                 </li>
 
                 <li>
-                    <a href="/order-online" onClick={closeMenu}>Order Online</a>
+                     <a
+                        href="/order-online"
+                        onClick={(event) => {
+                            event.preventDefault();
+                            goToPage("order-online");
+                        }}
+                    >
+                        Order Online
+                    </a>
                 </li>
 
                 <li>
-                    <a href="/login" onClick={closeMenu}>Login</a>
+                    <a
+                        href="/login"
+                        onClick={(event) => {
+                            event.preventDefault();
+                            goToPage("login");
+                        }}
+                    >
+                        Login
+                    </a>
                 </li>
             </ul>
         </nav>

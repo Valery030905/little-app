@@ -1,16 +1,66 @@
+import { useState } from 'react';
 import './App.css';
+
 import Header from './Header';
-import Main from "./Main";
-import Footer from "./Footer";
+import Footer from './Footer';
+
+import Main from './Main';
+
+import Reservation from './pages/Reservation';
+import DateTime from './pages/DateTime';
+import Time from './pages/Time';
 
 function App() {
-  return (
-    <>
-      <Header />
-      <Main />
-      <Footer />
-    </>
-  );
+
+    const [page, setPage] = useState('home');
+
+    const [reservationData, setReservationData] = useState({
+        guests: 2,
+        date: null,
+        time: null,
+        fullName: "",
+        phone: "",
+        email: "",
+        occasion: "",
+        allergies: "",
+        specialRequest: ""
+    });
+
+    return (
+        <>
+            <Header setPage={setPage} />
+
+            {page === 'home' && (
+                <Main />
+            )}
+
+            {page === 'reservation' && (
+                <Reservation
+                    reservationData={reservationData}
+                    setReservationData={setReservationData}
+                    setPage={setPage}
+                />
+            )}
+
+            {page === 'date' && (
+                <DateTime
+                    reservationData={reservationData}
+                    setReservationData={setReservationData}
+                    setPage={setPage}
+                />
+            )}
+
+            {page === 'time' && (
+                <Time
+                    reservationData={reservationData}
+                    setReservationData={setReservationData}
+                    setPage={setPage}
+                />
+            )}
+
+            <Footer />
+        </>
+    );
 }
 
 export default App;
