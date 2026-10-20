@@ -80,23 +80,6 @@ function Main({ setPage }) {
                     </div>
                 </section>
 
-                <section className="testimonials">
-                    <h2>Testimonials</h2>
-                    <div className="testimonials-container">
-                        <article className="testimonial">
-                            <p>"The food was amazing! The flavors were so fresh and the presentation was beautiful. I will definitely be coming back!"</p>
-                            <p>- John Doe</p>
-                        </article>
-                        <article className="testimonial">
-                            <p>"I had the best dining experience at Little Lemon. The staff was friendly and attentive, and the food was out of this world!"</p>
-                            <p>- Jane Smith</p>
-                        </article>
-                        <article className="testimonial">
-                            <p>"Little Lemon is my go-to spot for Mediterranean cuisine. The dishes are always flavorful and satisfying. Highly recommend!"</p>
-                            <p>- Michael Johnson</p>
-                        </article>
-                    </div>
-                </section>
         </main>
     );
 }
