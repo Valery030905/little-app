@@ -1,3 +1,4 @@
+
 function Main() {
     return (
         <main>
@@ -40,9 +41,7 @@ function Main() {
                                 <p>The famous Greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.</p>
                                 <div className="order">
                                     <a href="/">Order a delivery
-                                        <span class="material-symbols-outlined">
-                                            room_service
-                                        </span>
+                                        <i class="fa-solid fa-bell-concierge"></i>
                                     </a>
                                 </div>
                             </article>
@@ -56,9 +55,7 @@ function Main() {
                                 <p>Our traditional grilled bread rubbed with garlic and seasoned with salt and olive oil, topped with fresh diced tomatoes, and a drizzle of rich balsamic glaze.</p>
                                 <div className="order">
                                     <a href="/">Order a delivery
-                                        <span class="material-symbols-outlined">
-                                            room_service
-                                        </span>
+                                        <i class="fa-solid fa-bell-concierge"></i>
                                     </a>
                                 </div>
                             </article>
@@ -72,9 +69,7 @@ function Main() {
                                 <p>A light and creamy lemon delight featuring layers of crisp graham cracker crust, tangy homemade lemon curd, and a fluffy topped whip of fresh cream.</p>
                                 <div className="order">
                                     <a href="/">Order a delivery
-                                        <span class="material-symbols-outlined">
-                                            room_service
-                                        </span>
+                                        <i class="fa-solid fa-bell-concierge"></i>
                                     </a>
                                 </div>
                             </article>

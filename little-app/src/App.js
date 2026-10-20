@@ -3,12 +3,12 @@ import './App.css';
 
 import Header from './Header';
 import Footer from './Footer';
-
 import Main from './Main';
-
 import Reservation from './pages/Reservation';
 import DateTime from './pages/DateTime';
 import Time from './pages/Time';
+import GuestInformation from './pages/GuestInformation';
+import Confirmation from "./pages/Confirmation";
 
 function App() {
 
@@ -54,6 +54,21 @@ function App() {
                 <Time
                     reservationData={reservationData}
                     setReservationData={setReservationData}
+                    setPage={setPage}
+                />
+            )}
+
+            {page === 'guest' && (
+                <GuestInformation
+                    reservationData={reservationData}
+                    setReservationData={setReservationData}
+                    setPage={setPage}
+                />
+            )}
+
+            {page === "confirmation" && (
+                <Confirmation
+                    reservationData={reservationData}
                     setPage={setPage}
                 />
             )}

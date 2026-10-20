@@ -148,13 +148,13 @@ function DateTime({
                     <div className="reservation-card date-card">
 
                       <button
-                          type="button"
-                          className="back-button"
-                          onClick={() => setPage("reservation")}
-                          aria-label="Go back"
-                      >
-                          ‹
-                      </button>
+                            type="button"
+                            className="back-button"
+                            onClick={() => setPage("reservation")}
+                            aria-label="Go back"
+                            >
+                                <i class="fa-solid fa-angle-left"></i>
+                        </button>
 
                         <h1>Select the date</h1>
 

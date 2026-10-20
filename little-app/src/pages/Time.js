@@ -66,7 +66,7 @@ function Time({
                             onClick={() => setPage("date")}
                             aria-label="Go back"
                         >
-                            ‹
+                            <i class="fa-solid fa-angle-left"></i>
                         </button>
 
                         <h1>Select a time</h1>
