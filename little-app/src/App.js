@@ -9,6 +9,7 @@ import DateTime from './pages/DateTime';
 import Time from './pages/Time';
 import GuestInformation from './pages/GuestInformation';
 import Confirmation from "./pages/Confirmation";
+import ReservationConfirmed from "./pages/ReservationConfirmed";
 
 function App() {
 
@@ -68,6 +69,13 @@ function App() {
 
             {page === "confirmation" && (
                 <Confirmation
+                    reservationData={reservationData}
+                    setPage={setPage}
+                />
+            )}
+
+            {page === "confirmed" && (
+                <ReservationConfirmed
                     reservationData={reservationData}
                     setPage={setPage}
                 />
