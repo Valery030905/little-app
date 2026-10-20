@@ -32,7 +32,7 @@ function App() {
             <Header setPage={setPage} />
 
             {page === 'home' && (
-                <Main />
+                <Main setPage={setPage} />
             )}
 
             {page === 'reservation' && (

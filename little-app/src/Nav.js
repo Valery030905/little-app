@@ -44,7 +44,7 @@ function Nav({ setPage}) {
                         href="/about"
                         onClick={(event) => {
                             event.preventDefault();
-                            goToPage("about");
+                            goToPage("home");
                         }}
                     >
                         About
@@ -56,7 +56,7 @@ function Nav({ setPage}) {
                         href="/menu"
                         onClick={(event) => {
                             event.preventDefault();
-                            goToPage("menu");
+                            goToPage("home");
                         }}
                     >
                         Menu
@@ -80,7 +80,7 @@ function Nav({ setPage}) {
                         href="/order-online"
                         onClick={(event) => {
                             event.preventDefault();
-                            goToPage("order-online");
+                            goToPage("home");
                         }}
                     >
                         Order Online
@@ -92,7 +92,7 @@ function Nav({ setPage}) {
                         href="/login"
                         onClick={(event) => {
                             event.preventDefault();
-                            goToPage("login");
+                            goToPage("home");
                         }}
                     >
                         Login

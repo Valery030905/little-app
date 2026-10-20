@@ -1,5 +1,4 @@
-
-function Main() {
+function Main({ setPage }) {
     return (
         <main>
             <section className="hero">
@@ -14,9 +13,13 @@ function Main() {
                             Come and experience the flavors of the Mediterranean at Little Lemon, where we are
                             dedicated to providing the best Italian cuisine in the heart of Chicago.
                         </p>
-                        <a href="/Reservation">
-                            <button className="btn-reserve">Reserve a Table</button>
-                        </a>
+                       <button
+                            type="button"
+                            className="btn-reserve"
+                             onClick={() => setPage('reservation')}
+                        >
+                            Reserve a Table
+                        </button>
                     </div>
                     <div className="hero-image">
                         <img src="/images/hero-image.jpg" alt="Little Lemon restaurant" />
