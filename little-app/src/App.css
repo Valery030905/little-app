@@ -1031,25 +1031,30 @@ img {
 }
 
 .guest-card .next-button {
-  display: block;
-
-  width: 270px;
-  height: 74px;
-
-  margin: 25px auto 0;
-
   background-color: #f4ce14;
-
+  color: #000;
   border: none;
-  border-radius: 15px;
+  padding: 12px 20px;
+  border-radius: 6px;
 
-  font-family: 'Karla', sans-serif;
-  font-size: 32px;
   font-weight: bold;
-
+  font-family: 'Karla', sans-serif;
+  font-size: 20px;
   cursor: pointer;
+}
 
-  transition: transform 0.2s ease;
+button:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.continue-button:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    opacity: 0.7;
 }
 
 .guest-card .next-button:hover {
@@ -1685,19 +1690,5 @@ img {
 .confirmation-item p {
       font-size: 12px;
   }
-
-  .confirmed-card {
-        width: calc(100% - 30px);
-
-        padding: 30px 20px;
-    }
-
-    .confirmed-card h1 {
-        font-size: 36px;
-    }
-
-    .confirmation-message {
-        font-size: 14px;
-    }
 
 }

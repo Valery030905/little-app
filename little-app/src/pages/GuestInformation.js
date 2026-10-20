@@ -38,21 +38,7 @@ function GuestInformation({
         "Accessibility assistance"
     ];
 
-    // Validar Full Name
 
-    const isValidName = (name) => {
-        return /^[A-Za-zÁÉÍÓÚáéíóúÑñÜü\s]{2,}$/.test(name.trim());
-    };
-
-    // Validar Phone
-    const isValidPhone = (phone) => {
-        return /^[0-9+\s()-]{7,20}$/.test(phone.trim());
-    };
-
-    // Validar email
-    const isValidEmail = (email) => {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
-    };
 
     // Convertir la fecha guardada en un formato como:
     // 09 Oct 2026
@@ -127,11 +113,35 @@ function GuestInformation({
         setSpecialRequestOpen(false);
     };
 
-    // Verificar si los campos obligatorios están completos
+        // Validar Full Name
+
+    const isValidName = (name) => {
+        return /^[A-Za-zÁÉÍÓÚáéíóúÑñÜü\s]{2,}$/.test(name.trim());
+    };
+
+    // Validar Phone
+    const isValidPhone = (phone) => {
+        return /^[0-9+\s()-]{7,20}$/.test(phone.trim());
+    };
+
+    // Validar email
+    const isValidEmail = (email) => {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+    };
+
+    const isFullNameValid =
+    reservationData.fullName.trim().length >= 2;
+
+    const isPhoneValid =
+        /^[0-9+\s()-]{7,20}$/.test(reservationData.phone.trim());
+
+    const isEmailValid =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(reservationData.email.trim());
+
     const isFormValid =
-        isValidName(reservationData.fullName || "") &&
-        isValidPhone(reservationData.phone || "") &&
-        isValidEmail(reservationData.email || "");
+        isFullNameValid &&
+        isPhoneValid &&
+        isEmailValid;
 
     return (
         <main className="reservation-page">

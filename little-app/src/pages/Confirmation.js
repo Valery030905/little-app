@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 function Confirmation({
+  setReservationData,
     reservationData,
     setPage
 }) {
@@ -306,7 +307,17 @@ function Confirmation({
                             type="button"
                             className="confirm-button"
                             disabled={!termsAccepted}
-                            onClick={() => setPage("confirmed")}
+                           onClick={() => {
+                              const reservationNumber =
+                                  `LL-${Date.now().toString().slice(-6)}`;
+
+                              setReservationData({
+                                  ...reservationData,
+                                  reservationNumber
+                              });
+
+                              setPage("confirmed");
+                          }}
                         >
                             Confirm Reservation
                         </button>
