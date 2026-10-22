@@ -2,7 +2,8 @@ import { useState } from "react";
 function DateTime({
     reservationData,
     setReservationData,
-    setPage
+    setPage,
+    updateTimes,
 }) {
 
     const today = new Date();
@@ -117,14 +118,18 @@ function DateTime({
                 date: null
             });
         } else {
-            setReservationData({
+            const newReservationData = {
                 ...reservationData,
                 date: {
                     day,
                     month: currentMonth,
                     year: currentYear
                 }
-            });
+            };
+
+            setReservationData(newReservationData);
+
+            updateTimes(selected);
         }
     };
 

@@ -14,7 +14,20 @@
     <title>Little Lemon Restaurant</title>
   </head>
   <body>
+   
+<script>
+    const apiScript = document.createElement("script");
+    apiScript.src = "https://raw.githubusercontent.com/courseraap/capstone/main/api.js";
+
+    apiScript.onload = () => {
+      console.log("API cargada");
+    };
+
+    document.body.appendChild(apiScript);
+  </script>
+
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+
   </body>
 </html>

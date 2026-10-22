@@ -1,12 +1,21 @@
 import { useState } from "react";
+import { submitAPI } from "../api";
 
 function Confirmation({
   setReservationData,
-    reservationData,
-    setPage
+   reservationData,
+   setPage
 }) {
 
     const [termsAccepted, setTermsAccepted] = useState(false);
+
+    const submitForm = (formData) => {
+        const success = submitAPI(formData);
+
+        if (success) {
+            setPage("confirmed");
+        }
+    };
 
     // Formatear fecha
     const formatDate = () => {
@@ -35,7 +44,7 @@ function Confirmation({
         return `${monthNames[month]} ${day}, ${year}`;
     };
 
-
+    
     return (
 
         <main className="reservation-page">
@@ -303,24 +312,26 @@ function Confirmation({
                             CONFIRM
                         =========================== */}
 
-                        <button
-                            type="button"
-                            className="confirm-button"
-                            disabled={!termsAccepted}
-                           onClick={() => {
-                              const reservationNumber =
-                                  `LL-${Date.now().toString().slice(-6)}`;
+                       <button
+                       className="confirm-button"
+                        type="button"
+                        disabled={!termsAccepted}
+                        onClick={() => {
+                            const reservationNumber =
+                                `LL-${Date.now().toString().slice(-6)}`;
 
-                              setReservationData({
-                                  ...reservationData,
-                                  reservationNumber
-                              });
+                            const updatedReservationData = {
+                                ...reservationData,
+                                reservationNumber
+                            };
 
-                              setPage("confirmed");
-                          }}
-                        >
-                            Confirm Reservation
-                        </button>
+                            setReservationData(updatedReservationData);
+                            submitForm(updatedReservationData);
+                        }}
+
+                    >
+                        Confirm Reservation
+                    </button>
 
 
                         {/* ==========================

@@ -1,7 +1,8 @@
 function Time({
     reservationData,
     setReservationData,
-    setPage
+    setPage,
+    availableTimes
 }) {
 
     const times = [
@@ -39,6 +40,7 @@ function Time({
                 time: time
             });
         }
+
     };
 
     return (

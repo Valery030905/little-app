@@ -1,4 +1,4 @@
-import { useState } from 'react';
+
 import './App.css';
 
 import Header from './Header';
@@ -10,8 +10,12 @@ import Time from './pages/Time';
 import GuestInformation from './pages/GuestInformation';
 import Confirmation from "./pages/Confirmation";
 import ReservationConfirmed from "./pages/ReservationConfirmed";
+import { useState, useEffect } from 'react';
+import { fetchAPI } from './api';
 
 function App() {
+
+    const [availableTimes, setAvailableTimes] = useState([]);
 
     const [page, setPage] = useState('home');
 
@@ -26,6 +30,22 @@ function App() {
         allergies: "",
         specialRequest: ""
     });
+
+   
+useEffect(() => {
+    const today = new Date();
+    const times = fetchAPI(today);
+
+    setAvailableTimes(times);
+}, []);
+
+
+    
+    const updateTimes = (selectedDate) => {
+        const times = fetchAPI(selectedDate);
+        setAvailableTimes(times);
+    };
+
 
     return (
         <>
@@ -48,6 +68,7 @@ function App() {
                     reservationData={reservationData}
                     setReservationData={setReservationData}
                     setPage={setPage}
+                    updateTimes={updateTimes}
                 />
             )}
 
@@ -56,6 +77,7 @@ function App() {
                     reservationData={reservationData}
                     setReservationData={setReservationData}
                     setPage={setPage}
+                    availableTimes={availableTimes}
                 />
             )}
 
@@ -70,6 +92,7 @@ function App() {
             {page === "confirmation" && (
                 <Confirmation
                     reservationData={reservationData}
+                    setReservationData={setReservationData}
                     setPage={setPage}
                 />
             )}

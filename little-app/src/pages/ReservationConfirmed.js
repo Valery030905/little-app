@@ -4,9 +4,7 @@ function ReservationConfirmed({
 }) {
 
     // Generar número de reserva
-    const reservationNumber =
-        reservationData.reservationNumber ||
-        `LL-${Date.now().toString().slice(-6)}`;
+    const reservationNumber = reservationData.reservationNumber;
 
     return (
         <main className="reservation-page">
